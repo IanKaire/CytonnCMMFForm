@@ -14,7 +14,7 @@ img{
     width: 4.0rem ;
 }
 
-h1 {
+h2 {
     color: #006B5B;
     text-align: center;
 }
@@ -44,8 +44,14 @@ input {
     border-radius: 5px;
 }
 
+.button-container {
+    text-align: center;
+}
+
 button {
+    margin: 10px;
     padding: 10px 20px;
+    width: 25%;
     border: none;
     border-radius: 5px;
     background-color: #006B5B;
@@ -60,4 +66,54 @@ button:hover {
 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+/* Media queries for responsiveness */
+
+/* Samsung Galaxy */
+@media (max-width: 360px) {
+    img {
+        height: 3.0rem;
+        width: 3.0rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+}
+
+/* Galaxy Fold */
+@media (min-width: 280px) and (max-width: 320px) {
+    img {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 0.7rem;
+    }
+}
+
+/* iPhone */
+@media (max-width: 375px) {
+    img {
+        height: 3.0rem;
+        width: 3.0rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
 }
