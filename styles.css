@@ -9,6 +9,16 @@ body {
     padding: 20px;
 }
 
+img{
+    height: 4.0rem ;
+    width: 4.0rem ;
+}
+
+h1 {
+    color: #006B5B;
+    text-align: center;
+}
+
 form {
     background-color: #fff;
     padding: 20px;
