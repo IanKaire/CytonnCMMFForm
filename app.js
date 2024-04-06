@@ -57,7 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const amount = parseFloat(document.getElementById('amount').value);
         const interest = calculateInterest();;
         const tax = calculateTax();
-        return (amount + interest - tax).toFixed(2);
+        const amountWithInterest = parseFloat(amount) + parseFloat(interest);
+        return (amountWithInterest - tax).toFixed(2);
     }
 
     // Function to clear form fields
