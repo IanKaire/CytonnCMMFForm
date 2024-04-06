@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.M.M.F Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form id="investmentForm">
+            <div class="form-group">
+                <label for="fund">Fund</label>
+                <input type="text" id="fund" placeholder="CMMF" disabled>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="rate">Rate</label>
+                <input type="text" id="rate" value="17%" disabled>
+            </div>
+            <div class="form-group">
+                <label for="interest">Interest</label>
+                <input type="text" id="interest" disabled>
+            </div>
+            <div class="form-group">
+                <label for="taxableRate">Taxable Rate</label>
+                <input type="text" id="taxableRate" value="5%" disabled>
+            </div>
+            <div class="form-group">
+                <label for="tax">Tax</label>
+                <input type="text" id="tax" disabled>
+            </div>
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="text" id="total" disabled>
+            </div>
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="button" id="editBtn">Edit</button>
+        </form>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
