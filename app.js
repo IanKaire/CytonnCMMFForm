@@ -3,15 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submitBtn');
     const editBtn = document.getElementById('editBtn');
 
+    // Custom event for form submission
+    form.addEventListener('investmentSubmitted', (e) => {
+        saveFormData();
+    });
+
+    // Custom event for editing form data
+    editBtn.addEventListener('formEdit', () => {
+        populateFormFromLocalStorage();
+    });
+
     // Event listener for form submission
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        saveFormData();
+        // Dispatch custom event when form is submitted
+        form.dispatchEvent(new Event('investmentSubmitted'));
     });
 
     // Event listener for edit button
     editBtn.addEventListener('click', () => {
-        populateFormFromLocalStorage();
+        // Dispatch custom event when edit button is clicked
+        editBtn.dispatchEvent(new Event('formEdit'));
     });
 
     // Function to save form data to local storage
@@ -55,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to calculate total
     function calculateTotal() {
         const amount = parseFloat(document.getElementById('amount').value);
-        const interest = calculateInterest();;
+        const interest = calculateInterest();
         const tax = calculateTax();
         const amountWithInterest = parseFloat(amount) + parseFloat(interest);
         return (amountWithInterest - tax).toFixed(2);
