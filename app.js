@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to calculate tax
     function calculateTax() {
-        const interest = parseFloat(document.getElementById('interest').value);
+        const interest = calculateInterest();
         const taxableRate = 0.05;
         return (interest * taxableRate).toFixed(2);
     }
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to calculate total
     function calculateTotal() {
         const amount = parseFloat(document.getElementById('amount').value);
-        const interest = parseFloat(document.getElementById('interest').value);
-        const tax = parseFloat(document.getElementById('tax').value);
+        const interest = calculateInterest();;
+        const tax = calculateTax();
         return (amount + interest - tax).toFixed(2);
     }
 
