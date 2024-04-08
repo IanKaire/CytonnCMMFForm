@@ -30,7 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveFormData() {
         const formData = {
             amount: document.getElementById('amount').value,
+            rate: document.getElementById('rate').value,
             interest: calculateInterest(),
+            taxableRate: document.getElementById('taxableRate').value,
             tax: calculateTax(),
             total: calculateTotal()
         };
@@ -44,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = JSON.parse(localStorage.getItem('formData'));
         if (formData) {
             document.getElementById('amount').value = formData.amount;
+            document.getElementById('rate').value = formData.rate;
             document.getElementById('interest').value = formData.interest;
+            document.getElementById('taxableRate').value = formData.taxableRate;
             document.getElementById('tax').value = formData.tax;
             document.getElementById('total').value = formData.total;
         }
@@ -53,14 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to calculate interest
     function calculateInterest() {
         const amount = parseFloat(document.getElementById('amount').value);
-        const rate = 0.17;
+        const rate = parseFloat(document.getElementById('rate').value);
         return (amount * rate).toFixed(2);
     }
 
     // Function to calculate tax
     function calculateTax() {
         const interest = calculateInterest();
-        const taxableRate = 0.05;
+        const taxableRate = parseFloat(document.getElementById('taxableRate').value)
         return (interest * taxableRate).toFixed(2);
     }
 
@@ -76,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to clear form fields
     function clearForm() {
         document.getElementById('amount').value = '';
+        document.getElementById('rate').value = '';
         document.getElementById('interest').value = '';
+        document.getElementById('taxableRate').value = '';
         document.getElementById('tax').value = '';
         document.getElementById('total').value = '';
     }
